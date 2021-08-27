@@ -1,0 +1,8 @@
+<p id="review-<%= review.id %>">
+  <%= review.content %>
+  <%= link_to 'Delete review',
+              review_path(review),
+              remote: true,
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</p>

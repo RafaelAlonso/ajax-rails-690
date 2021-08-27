@@ -1,0 +1,5 @@
+<%= simple_form_for [restaurant, review],
+  data: { 'reviews-target': 'form', 'action': "submit->reviews#addReview" } do |f| %>
+  <%= f.input :content %>
+  <%= f.submit "Create Review" %>
+<% end %>

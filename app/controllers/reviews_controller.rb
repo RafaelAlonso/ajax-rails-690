@@ -5,9 +5,15 @@ class ReviewsController < ApplicationController
     @review.restaurant = @restaurant
 
     if @review.save
-      redirect_to restaurant_path(@restaurant, anchor: "review-#{@review.id}")
+      respond_to do |format|
+        format.html { redirect_to restaurant_path(@restaurant, anchor: "review-#{@review.id}") }
+        format.json
+      end
     else
-      render 'restaurants/show'
+      respond_to do |format|
+        format.html { render 'restaurants/show' }
+        format.json
+      end
     end
   end
 
